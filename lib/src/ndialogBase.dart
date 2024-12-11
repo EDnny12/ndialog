@@ -3,6 +3,7 @@
 ///==================================================================================
 import 'dart:async';
 import 'dart:ui';
+
 import 'package:flutter/material.dart';
 import 'package:ndialog/src/transition.dart';
 import 'package:ndialog/src/utils.dart';
@@ -30,7 +31,7 @@ class NDialog extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final ThemeData? theme = Theme.of(context);
-    final DialogTheme? dialogTheme = DialogTheme.of(context);
+    final DialogThemeData? dialogTheme = DialogTheme.of(context);
     final DialogStyle style = dialogStyle ?? DialogStyle();
 
     String? label = style.semanticsLabel;
@@ -352,7 +353,7 @@ class DialogBackground extends StatelessWidget {
           fit: StackFit.expand,
           children: <Widget>[
             InkWell(
-              overlayColor: MaterialStateProperty.all(Colors.transparent),
+              overlayColor: WidgetStateProperty.all(Colors.transparent),
               hoverColor: Colors.transparent,
               splashColor: Colors.transparent,
               highlightColor: Colors.transparent,
